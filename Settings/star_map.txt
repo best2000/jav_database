@@ -1,0 +1,8 @@
+00=dummy=0
+01=aoi tsukasa=0
+02=yui hatano=0
+03=amakawa sora=10
+04=amatsuka moe=2
+05=miru sakamichi=5
+06=rina ishihara=5
+EOF
