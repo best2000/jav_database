@@ -8,19 +8,15 @@ def statadd(name):
             starlis[i].stat = str(int(starlis[i].stat)+1)
             print('stat :', starlis[i].name, '+1')
             break
-
-    with open('Settings/star_map.txt', 'w') as f:
-        for object in starlis:
-            f.write(object.num+'='+object.name+'='+object.stat+'\n')
-        f.write("EOF")
+    rewrite_star_map(starlis)
 
 def filtered_clr():
     with open("Settings/filfol.txt", 'r') as f:
         di = f.read()
-    fil_file = os.listdir('Empire of the Rising Sun/'+di)
+    fil_file = os.listdir('jav/'+di)
     if len(fil_file) != 0:
         for fname in fil_file:
-            shutil.move('Empire of the Rising Sun/'+di+'/'+fname, 'Empire of the Rising Sun/'+fname)
+            shutil.move('jav/'+di+'/'+fname, 'jav/'+fname)
 
 def star_match_file(name): #return filename lis
     filtered_clr()
@@ -34,17 +30,17 @@ def star_match_file(name): #return filename lis
         print("star not found!")
     with open("Settings/filfol.txt", 'r') as f:
         di = f.read()
-    os.rename('Empire of The Rising Sun/'+di, 'Empire of The Rising Sun/star='+match_star.name)
+    os.rename('jav/'+di, 'jav/star='+match_star.name)
     with open("Settings/filfol.txt", 'w') as f:
         f.write('star='+match_star.name)
     di = 'star='+name
     match_file = []
-    for f_name in os.listdir('Empire of the Rising Sun'):
+    for f_name in os.listdir('jav'):
         if fnmatch.fnmatch(f_name, '*#'+match_star.num+'*'):
             match_file.append(f_name)
 
     for i in match_file:
-        shutil.move('Empire of the Rising Sun/'+i, 'Empire of the Rising Sun/'+di+'/'+i)
+        shutil.move('jav/'+i, 'jav/'+di+'/'+i)
     statadd(name)
     
             
@@ -58,7 +54,12 @@ def rand_star():
 def showall():
     starlis = get_starlis()
     for object in starlis:
-        print(object.num, object.name, object.stat)
+        object.show()
+
+def showre():
+    starlis = get_starlis()
+    for object in starlis:
+        print(object.latre, object.name, object.mark)
 
 def show_sort_stat():
     starlis = get_starlis()

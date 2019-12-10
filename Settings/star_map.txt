@@ -1,8 +1,22 @@
-00=dummy=0
-01=aoi tsukasa=0
-02=yui hatano=0
-03=amakawa sora=10
-04=amatsuka moe=2
-05=miru sakamichi=5
-06=rina ishihara=5
+00=2000-05-16=sena asami=2=
+01=2000-05-16=aoi tsukasa=0=
+02=2000-05-16=yui hatano=0=
+03=2000-05-16=sora amakawa=0=
+04=2000-05-16=amatsuka moe=0=
+05=2000-05-16=miru sakamichi=1=
+06=2000-05-16=rina ishihara=1=
+07=2000-05-16=aine maria=0=
+08=2000-05-16=anri okita=0=
+09=2000-05-16=arina hashimoto=0=
+10=2000-05-16=yuu asakura=0=
+11=2000-05-16=shuri atomi=0=
+12=2000-05-16=ayane suzukawa=0=
+13=2000-05-16=chinami itou=0=
+14=2000-05-16=emiri okazaki=0=
+15=2000-05-16=misaki enomoto=0=
+16=2000-05-16=erika momodani=0=
+17=2000-05-16=hazuki reira=0=
+18=2000-05-16=hinata koizumi=0=
+19=2000-05-16=misaki honda=0=
+20=2000-05-16=yura kano=0=
 EOF
