@@ -1,4 +1,4 @@
-import os, fnmatch, shutil, random
+import os, fnmatch, shutil, random, subprocess
 from class_register import *
 
 def statadd(name):
@@ -41,6 +41,7 @@ def star_match_file(name): #return filename lis
 
     for i in match_file:
         shutil.move('jav/'+i, 'jav/'+di+'/'+i)
+    subprocess.run(['start', 're.bat'], shell=True)
     statadd(name)
     
             

@@ -44,6 +44,8 @@ def addmark(name):
 def clrmark():
     starlis = get_starlis()
     for i in range(len(starlis)):
+        if starlis[i].mark == "*RETIRED*":
+            continue
         starlis[i].mark = ""
     rewrite_star_map(starlis)
 

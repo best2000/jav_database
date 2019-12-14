@@ -1,0 +1,3 @@
+cd jav
+start .
+exit
