@@ -10,19 +10,35 @@ class star:
     def show(self):
         print(self.num, self.latre, self.name, self.stat, self.mark)
 
+class config:
+    def __init__(self, target_folder_path, filter_folder):
+        self.target_folder_path = target_folder_path
+        self.filter_folder = filter_folder
+    def show(self):
+        print(self.target_folder_path, self.filter_folder)
+
+def get_config():
+    with open('Settings/config.txt') as f:
+        linelis = f.readlines()
+    conf_set = [] 
+    for line in linelis:
+        line = re.split('=', line)
+        conf_set.append(line[1][:-1])
+    return config(conf_set[0], conf_set[1])
+
+def rewrite_config(config):
+    with open('Settings/config.txt', 'w') as f:
+        f.write('target_folder_path='+config.target_folder_path+'\nfilter_folder='+config.filter_folder+'\n')
+
 def get_starlis():
-    linelis = []
-    with open("Settings/star_map.txt", 'r') as file:
-        while True:
-            line = file.readline()
-            if line == "EOF":
-                break
-            linelis.append(line)
+    with open("Settings/star_map.txt", 'r') as f:
+        linelis = f.readlines()
     #linelis = ['00=dummy\n', '01=aoi tsukasa\n', '02=yui hatano\n', ...]
 
     starlis = []
     for line in linelis:
         line = re.split('=', line)
+        print(line)
         object = star(line[0], line[1], line[2], line[3], line[4][:-1])
         starlis.append(object)
     return starlis
@@ -31,7 +47,6 @@ def rewrite_star_map(starlis):
     with open('Settings/star_map.txt', 'w') as f:
         for object in starlis:
             f.write(object.num+'='+object.latre+'='+object.name+'='+object.stat+'='+object.mark+'\n')
-        f.write("EOF")
 
 def addmark(name):
     starlis = get_starlis()
@@ -56,3 +71,4 @@ def newlatre(date, name):
             starlis[i].latre = date
             break
     rewrite_star_map(starlis)
+

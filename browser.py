@@ -11,14 +11,13 @@ def statadd(name):
     rewrite_star_map(starlis)
 
 def filtered_clr():
-    with open("Settings/filfol.txt", 'r') as f:
-        di = f.read()
-    fil_file = os.listdir('jav/'+di)
+    c = get_config()
+    fil_file = os.listdir(c.target_folder_path+c.filter_folder)
     if len(fil_file) != 0:
         for fname in fil_file:
-            shutil.move('jav/'+di+'/'+fname, 'jav/'+fname)
+            shutil.move(c.target_folder_path+c.filter_folder+fname, c.target_folder_path+fname)
 
-def star_match_file(name): #return filename lis
+def star_match_file(name):
     filtered_clr()
     name = name.lower()
     starlis = get_starlis()
@@ -28,19 +27,18 @@ def star_match_file(name): #return filename lis
             break
     if match_star == None:
         print("star not found!")
-    with open("Settings/filfol.txt", 'r') as f:
-        di = f.read()
-    os.rename('jav/'+di, 'jav/star='+match_star.name)
-    with open("Settings/filfol.txt", 'w') as f:
-        f.write('star='+match_star.name)
-    di = 'star='+name
+        return
+    c = get_config()
+    os.rename(c.target_folder_path+c.filter_folder, c.target_folder_path+match_star.name)
+    c.filter_folder = match_star.name+'/'
+    rewrite_config(c)
     match_file = []
-    for f_name in os.listdir('jav'):
+    for f_name in os.listdir(c.target_folder_path):
         if fnmatch.fnmatch(f_name, '*#'+match_star.num+'*'):
             match_file.append(f_name)
 
     for i in match_file:
-        shutil.move('jav/'+i, 'jav/'+di+'/'+i)
+        shutil.move(c.target_folder_path+i, c.target_folder_path+c.filter_folder+i)
     subprocess.run(['start', 're.bat'], shell=True)
     statadd(name)
     
@@ -86,3 +84,5 @@ def show_sort_name():
                 starlis.remove(object)
                 print(object.name, object.stat)
                 
+
+star_match_file('amatsuka moe')

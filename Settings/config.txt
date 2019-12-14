@@ -1,0 +1,2 @@
+target_folder_path=JAV/
+filter_folder=amatsuka moe/

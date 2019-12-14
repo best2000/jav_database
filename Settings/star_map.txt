@@ -2,9 +2,9 @@
 01=2019-12-13=aoi tsukasa=1=
 02=2019-12-05=yui hatano=0=
 03=2019-12-07=sora amakawa=6=
-04=2019-12-07=amatsuka moe=0=
+04=2019-12-07=amatsuka moe=2=
 05=2019-12-07=miru sakamichi=1=
-06=2018-09-07=rina ishihara=2=*RETIRED*
+06=2018-09-07=rina ishihara=4=*RETIRED*
 07=2019-12-06=aine maria=0=
 08=2018-05-11=anri okita=0=*RETIRED*
 09=2019-12-07=arina hashimoto=2=
@@ -41,4 +41,3 @@
 40=2000-16-12=momoe takanashi=0=
 41=2000-16-12=mio kimishima=0=
 42=2000-16-12=akari mitani=0=
-EOF
