@@ -84,5 +84,3 @@ def show_sort_name():
                 starlis.remove(object)
                 print(object.name, object.stat)
                 
-
-star_match_file('amatsuka moe')

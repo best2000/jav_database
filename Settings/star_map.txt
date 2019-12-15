@@ -2,7 +2,7 @@
 01=2019-12-13=aoi tsukasa=1=
 02=2019-12-05=yui hatano=0=
 03=2019-12-07=sora amakawa=6=
-04=2019-12-07=amatsuka moe=2=
+04=2019-12-07=amatsuka moe=3=
 05=2019-12-07=miru sakamichi=1=
 06=2018-09-07=rina ishihara=4=*RETIRED*
 07=2019-12-06=aine maria=0=

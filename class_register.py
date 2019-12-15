@@ -38,7 +38,6 @@ def get_starlis():
     starlis = []
     for line in linelis:
         line = re.split('=', line)
-        print(line)
         object = star(line[0], line[1], line[2], line[3], line[4][:-1])
         starlis.append(object)
     return starlis
