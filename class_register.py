@@ -7,6 +7,7 @@ class star:
         self.stat = stat
         self.latre = latre
         self.mark = mark
+        self.javlib = None
     def show(self):
         print(self.num, self.latre, self.name, self.stat, self.mark)
 
@@ -45,7 +46,7 @@ def get_starlis():
 def rewrite_star_map(starlis):
     with open('Settings/star_map.txt', 'w') as f:
         for object in starlis:
-            f.write(object.num+'='+object.latre+'='+object.name+'='+object.stat+'='+object.mark+'\n')
+            f.write(object.num+'='+object.latre+'='+object.name+'='+object.stat+'='+object.mark+'='+object.javlib+'\n')
 
 def addmark(name):
     starlis = get_starlis()

@@ -1,15 +1,18 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>jav_filter</title>
+<head> <meta charset="utf-8">
+    <title>Calculatar</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
 </head>
 <body>
-    <form action="/search" method="get">
-        search: <input type="text" name="searchkey">
-      </form>
+    <button class="menu" id='all_star'>all_star</button><br>
+    <button class="menu" id='random'>random</button>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('#all_star').click(function(){
+        window.location.replace('http://127.0.0.1:5000/all')
+    })
+</script>
 </html>

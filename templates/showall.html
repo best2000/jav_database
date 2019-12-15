@@ -7,8 +7,32 @@
     <title>ALL</title>
 </head>
 <body>
-    {% for star_dict in star_dictlis %}
-            <li class="collection-item">{{star_dict.num}}:{{star_dict.name}}</li>
-    {% endfor %}
+    <button class="menu" id='search'>search</button>
+    <input id="search_input" type="text" name="searchkey" value="">
+    <div id="display_area"> 
+        {% for star in star_dictlis %}
+            <button class="star">{{star.name}}</button><p style="display: inline;" class="star">{{star.mark}}</p><br>
+        {% endfor %}
+    </div>
+    
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $("#search_input").change(function(){
+        $('.star').show()
+        var regkey = RegExp($('#search_input').val())
+        var starlis = Array.prototype.slice.call($('.star')) //convert elementlist to actual list of elements
+        starlis.forEach((elem, index)=>{
+        if (regkey.test(elem.innerText) == false) {
+            $(elem).hide() 
+        }   
+        })
+    })
+    $(document).click(function(event) {
+        if ($(event.target).attr('class') == "star"){
+            window.location="pro?name="+$(event.target).text()
+        }
+    })
+    
+</script>
 </html>
