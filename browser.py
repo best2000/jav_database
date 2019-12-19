@@ -1,15 +1,6 @@
 import os, fnmatch, shutil, random, subprocess
 from class_register import *
 
-def statadd(name):
-    starlis = get_starlis()
-    for i in range(len(starlis)):
-        if starlis[i].name == name:
-            starlis[i].stat = str(int(starlis[i].stat)+1)
-            print('stat :', starlis[i].name, '+1')
-            break
-    rewrite_star_map(starlis)
-
 def filtered_clr():
     c = get_config()
     fil_file = os.listdir(c.target_folder_path+c.filter_folder)
@@ -40,7 +31,7 @@ def star_match_file(name):
     for i in match_file:
         shutil.move(c.target_folder_path+i, c.target_folder_path+c.filter_folder+i)
     subprocess.run(['start', 're.bat'], shell=True)
-    statadd(name)
+    #statadd(name)
     
             
 def rand_star():
@@ -60,17 +51,6 @@ def showre():
     for object in starlis:
         print(object.latre, object.name, object.mark)
 
-def show_sort_stat():
-    starlis = get_starlis()
-    statlis = []
-    for object in starlis:
-        statlis.append(int(object.stat))
-    statlis.sort()
-    for stat in statlis:
-        for object in starlis:
-            if object.stat == str(stat):
-                starlis.remove(object)
-                print(object.stat, object.name)
 
 def show_sort_name():
     starlis = get_starlis()
@@ -82,5 +62,5 @@ def show_sort_name():
         for object in starlis:
             if object.name == name:
                 starlis.remove(object)
-                print(object.name, object.stat)
+                print(object.name)
                 

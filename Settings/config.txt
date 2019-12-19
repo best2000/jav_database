@@ -1,2 +1,2 @@
-target_folder_path=JAV/
-filter_folder=amatsuka moe/
+target_folder_path=jav/
+filter_folder=aoi tsukasa/

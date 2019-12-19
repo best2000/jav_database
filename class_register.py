@@ -1,15 +1,13 @@
 import re
 
 class star:
-    def __init__(self, num, latre, name, stat, mark):
+    def __init__(self, num, latre, name, mark):
         self.num = num
         self.name = name
-        self.stat = stat
         self.latre = latre
         self.mark = mark
-        self.javlib = None
     def show(self):
-        print(self.num, self.latre, self.name, self.stat, self.mark)
+        print(self.num, self.latre, self.name, self.mark)
 
 class config:
     def __init__(self, target_folder_path, filter_folder):
@@ -39,14 +37,14 @@ def get_starlis():
     starlis = []
     for line in linelis:
         line = re.split('=', line)
-        object = star(line[0], line[1], line[2], line[3], line[4][:-1])
+        object = star(line[0], line[1], line[2], line[3][:-1])
         starlis.append(object)
     return starlis
 
 def rewrite_star_map(starlis):
     with open('Settings/star_map.txt', 'w') as f:
         for object in starlis:
-            f.write(object.num+'='+object.latre+'='+object.name+'='+object.stat+'='+object.mark+'='+object.javlib+'\n')
+            f.write(object.num+'='+object.latre+'='+object.name+'='+object.mark+'='+object.javlib+'\n')
 
 def addmark(name):
     starlis = get_starlis()
